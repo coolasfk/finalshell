@@ -87,3 +87,24 @@ t_cmd	*quoted_delimiter(t_cmd *cmd, char **start, \
 	(*start)++;
 	return ((t_cmd *)res);
 }
+
+size_t	ft_strlcpy_special(char *dst, const char *src, size_t dstsize)
+{
+	size_t	i;
+	size_t	k;
+
+	if (dstsize < 1)
+		return (ft_strlen(src));
+	i = 0;
+	k = 0;
+	while (src[k] && i < dstsize - 1)
+	{
+		if(src[k] == '\\')
+			k++;
+		dst[i] = src[k];
+		i++;
+		k++;
+	}
+	dst[i] = '\0';
+	return (ft_strlen(src));
+}

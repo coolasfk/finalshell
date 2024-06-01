@@ -29,37 +29,27 @@ t_execcmd	*execcmd_init(t_m *m)
 
 t_redircmd	*redircmd_init(t_cmd *subcmd, char *s_token, size_t size)
 {
+	int	escape_flag;
+	size_t	i;
+
 	t_redircmd	*redircmd;
 	redircmd = (t_redircmd *)safe_malloc(1, REDIR, subcmd);
 	redircmd->type = REDIR;
-	redircmd->cmd = subcmd;
-	redircmd->file = safe_malloc(size+2, CHAR, (t_cmd *)redircmd);	
+	redircmd->cmd = subcmd;	
+	escape_flag = 0;
+	i = 0;
+	while (i < size)
+	{
+		if (s_token[i] == '\\')
+			escape_flag = 1;
+		i++;
+	}
+	if (escape_flag == 1)
+		redircmd->file = safe_malloc(size - 1, CHAR, (t_cmd *)redircmd);
+	else
+		redircmd->file = safe_malloc(size, CHAR, (t_cmd *)redircmd);
 	ft_strlcpy_special(redircmd->file, s_token, size);
 	return (redircmd);
-}
-
-size_t	ft_strlcpy_special(char *dst, const char *src, size_t dstsize)
-{
-	size_t	i;
-	size_t	k;
-
-	if (dstsize < 1)
-		return (ft_strlen(src));
-	i = 0;
-	k = 0;
-	while (src[k] && i < dstsize - 1)
-	{
-		if(src[k] == '/' || src[k] == '\\')
-		{
-			k++;
-			dstsize += 10;
-		}
-		dst[i] = src[k];
-		i++;
-		k++;
-	}
-	dst[i] = '\0';
-	return (ft_strlen(src));
 }
 
 void	init_mode_fd(t_redircmd *rcmd, int mode, int fd)

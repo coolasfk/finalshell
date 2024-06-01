@@ -14,20 +14,28 @@
 
 volatile sig_atomic_t	g_sig_indicator = 0;
 
+int	event(void)
+{
+	return (0);
+}
+
 void	no_line_expansion(t_heredoc *heredoc, int heredoc_fd, t_m *m)
 {
 	char				*line;
 	struct sigaction	sa;
 
 	signal_tracking(&sa, m);
-	line = ft_readline("heredoc>", m);
-	while ((line) != NULL)
+	rl_event_hook = event;
+	while (1)
 	{
+		line = readline("heredoc>");
 		if (g_sig_indicator != 0)
 		{
 			free(line);
 			break ;
 		}
+		if (!line)
+			break;
 		if (ft_strncmp(line, heredoc->delimiter,
 				ft_strlen(heredoc->delimiter)) == 0)
 		{
@@ -38,7 +46,6 @@ void	no_line_expansion(t_heredoc *heredoc, int heredoc_fd, t_m *m)
 		write(heredoc_fd, "\n", 1);
 		free(line);
 		line = NULL;
-		line = ft_readline("heredoc>", m);
 	}
 }
 
@@ -77,9 +84,10 @@ void	expand_line(t_heredoc *heredoc, int heredoc_fd, t_m *m)
 
 	env_cmd = 0;
 	signal_tracking(&sa, m);
-	line = ft_readline("heredoc>", m);
-	while (line != NULL)
+	rl_event_hook = event;
+	while (1)
 	{
+		line = readline("heredoc>");
 		if (g_sig_indicator != 0 || ft_strncmp(line, heredoc->delimiter,
 				ft_strlen(heredoc->delimiter)) == 0)
 		{
@@ -93,6 +101,5 @@ void	expand_line(t_heredoc *heredoc, int heredoc_fd, t_m *m)
 			expand_env_cmd(line, target, heredoc_fd, heredoc);
 		free(line);
 		line = NULL;
-		line = ft_readline("heredoc>", m);
 	}
 }

@@ -224,3 +224,260 @@ cd $HOME
 cd $HOME
 cd $HOME
 cd $HOME
+top
+ls
+top | grep "Finder"
+ls
+<<EOF
+cd $HOME
+echo $HOME/Documents
+echo $HOME
+echo $HOME/Documents
+echo $HOME/Documents
+echo hello >>>test
+echo hello >>>test
+echo hello > >test
+echo $?
+echo $HOME
+echo $HOME/Documents
+echo $HOME
+echo $HOME/Documents
+<<eof
+<<eof
+echo $HOME/Documents
+echo $HOME/Documents
+echo $HOME$USER
+echo $HOME/Documents
+echo $HOME/Documents
+echo &?
+echo hello | (export test=1) | pwd
+env
+echo hello | (cd -) | pwd
+pwd
+echo hello >\|hi
+echo hello > test\ 1
+echo hello > test\ 1
+echo hello >"test"
+echo hello >"test"
+export myfile=a
+echo hello > "$myfile"
+echo "hello"
+echo hello"bye"
+echo hello"bye"
+echo hello"bye"
+echo hello"bye"
+echo "hello"
+<in0.txt grep "hello"
+echo "hello""bye"
+echo \;hello
+echo hello
+echo hello"bye"
+echo $HOME/Documents
+echo hello >test\ 1
+echo hello >test\ 1
+echo hello >test\ 1
+echo hello >     test\ 1
+echo hello >     test\ 1
+echo hello >     test\ 1
+echo hello >     test\ 1
+echo hello >     test\ 2
+echo hello >     test\ 2
+echo \hello
+echo \;hello
+echo hello >test
+echo hello >testtest
+echo hello >testtest
+echo hello >testtest
+echo \;hello
+echo \;hello
+echo hello\;bye
+echo \;hello
+echo hello\;bye
+echo hello > test\;
+echo hello\;bye
+echo \;hello
+echo \|bye
+echo '
+echo '|bye'
+echo "hello$HOME"
+echo '$HOME'
+export a="hello"
+env
+echo hello >$a
+echo hello >$a
+export a="hello"
+echo hello >$a
+cd ~
+pwd
+echo hello >>>test
+echo hello >> >test
+echo hello >\;hello
+echo hello >\|hello
+echo hello >>>test
+echo hello >>>test
+echo hello >>>test
+echo hello >>>test
+echo hello >>>test
+echo hello >> >test
+echo $?
+echo hello >$?
+<out
+>out
+echo "hell >out
+cat main.c ; |
+cat main.c ; >out | 
+>out |
+cat main.c ; |
+echo hello >out ; |
+>out |
+cat main.c ; |
+cat <main.c | wc -l
+|
+echo hello |
+cat main.c |
+echo $?
+|
+echo $?
+echo hello ; |
+(echo hello
+echo hello >
+echo hello >.
+echo hello >.
+echo hello >. 
+echo hello >. 
+echo hello >.
+echo hello >.@
+echo hello >.(
+echo hello >.)
+echo hello >.<
+echo hello >..
+echo hello >.
+echo hello >. 
+echo hello >.test
+echo hello >.<
+echo hello >.&
+echo hello >.(
+echo hello >.)
+echo hello >
+echo hello >>.
+echo hello >>.
+echo hello >>. 
+echo hello >>
+echo hello >><
+echo hello >>.(
+echo hello >>.)
+echo hello >>.&
+echo hello >>..
+echo hello >>.. 
+echo hello >#
+echo hello >.#
+echo hello >>#
+echo $?
+<<EOF
+<<EOF
+cat main.c >out1 >out2
+<<EOF <out1 <out2 grep "history" | wc -l
+<<EOF <out1 <out2 grep "history" | wc -l
+top | grep Finder
+ls
+cat <<EOF | ls
+cat <<EOF | ls
+ls | cat <<EOF
+ls | cat <<EOF
+<<EOF
+<<'EOF'
+<<'EOF'
+<<'EOF'
+<<'EOF'
+<<'EOF'
+<<'EOF'
+<<"EOF'
+<<'EOF'
+<<'EOF'
+<<'EOG'
+<<'EOF'
+<<'EOF'
+ls
+<<'EOF'
+ls
+<<'EOF'
+<<'EOF'
+<<'EOF'
+ls
+<<'EOF'
+
+<<'EOF'
+<<'EOF'
+<<'EOF'
+ls
+<<'EOF'
+ls
+<<'EOF'
+<<'EOF'
+<<'EOF'
+<<'EOF'
+<<'EOF'
+<<'EOF'
+ls
+<<'EOF'
+<<'EOF'
+echo hello
+<<'EOF'
+echo hello
+<<'EOF'
+<<'EOF'
+<<'EOF'
+ls
+<<'EOF'
+<<'EOF'
+<<'EOF'
+ls
+<<'EOF'
+ls
+<<EOF
+ls
+<<EOF
+<<'EOF'
+ls
+<<EOF
+<<EOF cat
+<<EOF cat
+ls
+<<EOF cat
+ls
+echo hello
+echo hello >>>test
+cat <<EOF | ls
+cat <<EOF | ls
+cat <<EOF | ls
+ls | cat <<EOF
+sleep 3 | sleep 3 | sleep 3
+echo hello > 
+echo hello >
+echo hello >>
+echo hello >> 
+echo hello ><
+echo hello >;
+echo hello >\;hello
+echo hello >>.hello
+echo hello >>..hello
+echo hello >>.
+echo hello >>..
+echo hello >>.@
+echo hello >>>
+echo hello >>;
+top | grep Finder
+cd ~
+echo -n hello >>.@
+echo hello >$SHLVL
+./minishell
+echo $SHLVL
+exit
+<<EOF <.@ grep hello
+export a b=bye c="ciao"
+env
+a=hello
+env
+unset a b c
+ls | export a=hello | ls
+env

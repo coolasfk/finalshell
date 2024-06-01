@@ -45,9 +45,6 @@ void	execute_simple_command(t_execcmd *ecmd, t_m *m)
 {
 	struct sigaction	sa;
 
-//test
-printf("execute simple command\n");
-//
 	minishell_envp(m);
 	find_path(m);
 	find_executable_path(m, ecmd);

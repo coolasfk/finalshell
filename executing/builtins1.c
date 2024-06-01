@@ -64,7 +64,7 @@ void	builtin_cd(t_cmd *cmd, t_m *m)
 
 	(void)m;
 	cmd_args = ((t_execcmd *)cmd)->cmd_args;
-	if (cmd_args[1] == NULL)
+	if (cmd_args[1] == NULL || ft_strcmp(cmd_args[1], "~") == 0)
 	{
 		home = get_envvar("HOME");
 		if (chdir(home->value) != 0)

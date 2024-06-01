@@ -297,6 +297,7 @@ bool							skipspace_peek(char **start, char *end,
 t_cmd							*quoted_delimiter(t_cmd *cmd,
 									char **start, char *s_token, char *e_token);
 void							add_qflag(t_qflag **lst, t_qflag *new);
+size_t							ft_strlcpy_special(char *dst, const char *src, size_t dstsize);
 
 // initial and last set of cmd before entering exeution
 void							initial_setup(t_m *m, char **envp);
@@ -304,10 +305,11 @@ void							set_exec(t_cmd *cmd, t_m *m);
 void							parse_left_right(t_cmd *left, t_cmd *right,
 									t_m *m);
 void							last_set(t_cmd *cmd, t_m *m);
-char							*replace_d(t_execcmd *ecmd, int i);
-char							*get_newstr2(char *temp, char *e_cpy,
-									t_execcmd *ecmd, char *first_part);
+char							*replace_dollar(char *original, t_m *m);
+char							*get_newstr(char *temp, char *e_cpy,
+									t_m *m, char *first_part);
 void							get_strlen(char *temp, int *i);
+void							update_temp(char **temp);
 
 // parsing main functions
 t_cmd							*parsecmd(char *input, t_m *m);
@@ -327,10 +329,10 @@ void							populate_cmdargs(t_execcmd *ecmd, char *s_token,
 									char *e_token, t_cmd *cmd);
 void							cmdargs_quote(t_execcmd *ecmd, char *s_token,
 									char *e_token, char **start);
-char							*getvalue_freename(t_list *cmdargs,
-									char *var_name);
+char							*getvalue_freename(char *var_name);
 char							*get_current_envvar(char *key);
-char							*get_exported_envvar(char *key);
+void							check_exec_flags(t_execcmd *ecmd);
+void							add_flagnode(t_qflag **flags);
 void							build_envvar_list(t_envvar *envvars,
 									t_list **envcpy);
 
