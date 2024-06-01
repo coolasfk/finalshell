@@ -481,3 +481,31 @@ env
 unset a b c
 ls | export a=hello | ls
 env
+ls | cat <<EOF | ls
+ls || echo hello
+echo hello |
+echo hello ||
+echo hello || >
+ls && echo hello
+ls && >
+ls &&
+echo hello &
+ls && |
+echo hello &&
+echo hello ||
+echo hello |||
+echo hello &|
+echo hello |&
+echo hello &|
+echo hello &&
+echo hello &
+echo hello &
+echo hello &|
+echo hello |&
+echo hello &|
+echo hello &&|
+echo hello ||&
+echo hello ||&
+echo hello &&|
+echo hello &|
+echo hello |&
