@@ -53,6 +53,7 @@ SRC = executing/builtin_utils1.c \
 	  free_memory2.c \
 	  get_type1.c \
 	  get_type2.c \
+	  get_type3.c \
 	  last_set1.c \
 	  last_set2.c \
 	  main_utils.c \

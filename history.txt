@@ -509,3 +509,4 @@ echo hello ||&
 echo hello &&|
 echo hello &|
 echo hello |&
+(echo hello || ls ) | wc -l
