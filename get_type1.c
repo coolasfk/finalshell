@@ -98,6 +98,7 @@ int	get_outtype(char **start)
 	}
 	return (type);
 }
+<<<<<<< HEAD
 
 /*
 int	get_atype(char **start, char *end)
@@ -134,3 +135,5 @@ int	get_atype(char **start, char *end)
 	//
 	return (type);
 }*/
+=======
+>>>>>>> f6c2271deb67e8e0089cdd3efbaac3ed0c30397d

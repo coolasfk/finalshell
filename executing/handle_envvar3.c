@@ -3,10 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   handle_envvar3.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: eprzybyl <eprzybyl@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:48:54 by bcai              #+#    #+#             */
 /*   Updated: 2024/06/01 14:55:03 by eprzybyl         ###   ########.fr       */
+=======
+/*   By: bcai <bcai@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/17 10:48:54 by bcai              #+#    #+#             */
+/*   Updated: 2024/05/30 10:28:48 by bcai             ###   ########.fr       */
+>>>>>>> f6c2271deb67e8e0089cdd3efbaac3ed0c30397d
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +111,10 @@ void	update_envvars(char *key, char *value, int is_exported)
 		}
 		temp = temp->next;
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> f6c2271deb67e8e0089cdd3efbaac3ed0c30397d
 	if (modify == 1)
 		update_target(target, value, key, is_exported);
 	else

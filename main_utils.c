@@ -3,10 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: eprzybyl <eprzybyl@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 11:48:32 by bcai              #+#    #+#             */
 /*   Updated: 2024/06/03 19:39:02 by eprzybyl         ###   ########.fr       */
+=======
+/*   By: bcai <bcai@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/17 11:48:32 by bcai              #+#    #+#             */
+/*   Updated: 2024/05/30 09:43:56 by bcai             ###   ########.fr       */
+>>>>>>> f6c2271deb67e8e0089cdd3efbaac3ed0c30397d
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +36,11 @@ void	initial_setup(t_m *m, char **envp)
 	new_termios.c_lflag &= ~ECHOCTL;
 	tcsetattr(STDIN_FILENO, TCSANOW, &new_termios);
 	update_working_history(m);
+<<<<<<< HEAD
 	update_envvars(ft_strdup("OLDPWD"), ft_strdup("  "), 1);
 	m->start = 0;
+=======
+>>>>>>> f6c2271deb67e8e0089cdd3efbaac3ed0c30397d
 }
 
 void	partial_reinit_m(t_m *m)

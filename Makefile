@@ -8,10 +8,10 @@ CC = gcc
 #CFLAGS = -Wall -Wextra -Werror -Wno-unused-but-set-variable -Wno-unused-const-variable -Wno-unused-parameter -Wno-unused-variable -Wno-sign-compare
 CFLAGS := -Wall -Wextra -Werror -g -MMD -MP
 # Include paths for header files
-H_PATH := -I. -I /usr/local/Cellar/readline/8.2.10/include
+H_PATH := -I. -I /usr/local/Cellar/readline/8.2.1/include
 
 # Library paths
-LIB_PATH := -L./libft -L /usr/local/Cellar/readline/8.2.10/lib
+LIB_PATH := -L./libft -L /usr/local/Cellar/readline/8.2.1/lib
 
 # Libraries to link against, including the math library if needed
 LDLIBS := -lft -lreadline
@@ -53,6 +53,7 @@ SRC = executing/builtin_utils1.c \
 	  free_memory2.c \
 	  get_type1.c \
 	  get_type2.c \
+	  get_type3.c \
 	  last_set1.c \
 	  last_set2.c \
 	  main_utils.c \

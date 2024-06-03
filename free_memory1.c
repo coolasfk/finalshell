@@ -39,9 +39,12 @@ void	free_exec(t_cmd *cmd)
 	t_execcmd	*execcmd;
 	t_list		*temp;
 
+<<<<<<< HEAD
 //test
 printf("in free_exec, ready to free\n");
 //
+=======
+>>>>>>> f6c2271deb67e8e0089cdd3efbaac3ed0c30397d
 	execcmd = (t_execcmd *)cmd;
 	while (execcmd->cmdargs != NULL)
 	{
@@ -53,16 +56,22 @@ printf("in free_exec, ready to free\n");
 	}
 	if (execcmd->cmd_args != NULL)
 		free(execcmd->cmd_args);
+<<<<<<< HEAD
 	//test
 	printf("freed cmdargs and cmd_args, ready to free flags\n");
 	//
+=======
+>>>>>>> f6c2271deb67e8e0089cdd3efbaac3ed0c30397d
 	free_flags(execcmd->qflags);
 	free_flags(execcmd->cqflags);
 	free(cmd);
 	cmd = NULL;
+<<<<<<< HEAD
 	//test
 	printf("finished freeing flags\n");
 	//
+=======
+>>>>>>> f6c2271deb67e8e0089cdd3efbaac3ed0c30397d
 }
 
 void	free_memory(t_cmd *cmd)

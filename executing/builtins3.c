@@ -3,10 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   builtins3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: eprzybyl <eprzybyl@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:46:08 by bcai              #+#    #+#             */
 /*   Updated: 2024/06/03 20:24:56 by eprzybyl         ###   ########.fr       */
+=======
+/*   By: bcai <bcai@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/17 10:46:08 by bcai              #+#    #+#             */
+/*   Updated: 2024/05/30 10:02:25 by bcai             ###   ########.fr       */
+>>>>>>> f6c2271deb67e8e0089cdd3efbaac3ed0c30397d
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +38,12 @@ static void	is_numeric(t_cmd *cmd, t_m *m, char *arg_one)
 		if (!ft_isdigit(arg_one[i]))
 		{
 			printf("exit\nminishell: exit: %s: \
+<<<<<<< HEAD
 				numeric argument required\n",
 					arg_one);
+=======
+				numeric argument required\n", arg_one);
+>>>>>>> f6c2271deb67e8e0089cdd3efbaac3ed0c30397d
 			free_tree(cmd, m);
 			lastfree_restore();
 			exit(255);
@@ -82,9 +93,15 @@ void	builtin_unset(t_cmd *cmd, t_m *m)
 
 void	builtin_pwd(t_cmd *cmd, t_m *m)
 {
+<<<<<<< HEAD
 	char *buffer;
 	size_t size;
 	char *cwd;
+=======
+	char	*buffer;
+	size_t	size;
+	char	*cwd;
+>>>>>>> f6c2271deb67e8e0089cdd3efbaac3ed0c30397d
 
 	size = 1024;
 	while (1)
@@ -100,4 +117,8 @@ void	builtin_pwd(t_cmd *cmd, t_m *m)
 		else
 			resize_or_free(buffer, m, &size);
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f6c2271deb67e8e0089cdd3efbaac3ed0c30397d

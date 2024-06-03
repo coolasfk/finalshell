@@ -6,7 +6,11 @@
 /*   By: eprzybyl <eprzybyl@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:55:41 by bcai              #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/06/03 19:48:14 by eprzybyl         ###   ########.fr       */
+=======
+/*   Updated: 2024/05/30 20:39:02 by eprzybyl         ###   ########.fr       */
+>>>>>>> f6c2271deb67e8e0089cdd3efbaac3ed0c30397d
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +33,7 @@ t_execcmd	*execcmd_init(t_m *m)
 
 t_redircmd	*redircmd_init(t_cmd *subcmd, char *s_token, size_t size)
 {
+<<<<<<< HEAD
 	int			escape_flag;
 	size_t		i;
 	t_redircmd	*redircmd;
@@ -36,6 +41,15 @@ t_redircmd	*redircmd_init(t_cmd *subcmd, char *s_token, size_t size)
 	redircmd = (t_redircmd *)safe_malloc(1, REDIR, subcmd);
 	redircmd->type = REDIR;
 	redircmd->cmd = subcmd;
+=======
+	int	escape_flag;
+	size_t	i;
+
+	t_redircmd	*redircmd;
+	redircmd = (t_redircmd *)safe_malloc(1, REDIR, subcmd);
+	redircmd->type = REDIR;
+	redircmd->cmd = subcmd;	
+>>>>>>> f6c2271deb67e8e0089cdd3efbaac3ed0c30397d
 	escape_flag = 0;
 	i = 0;
 	while (i < size)

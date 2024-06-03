@@ -49,13 +49,20 @@ t_cmd	*parselist(char **start, char *end, t_m *m)
 	return (cmd);
 }
 
+<<<<<<< HEAD
 t_cmd	*parse_and_or(char **start, char *end, t_m *m)
 {
 	t_cmd	*cmd;
+=======
+t_cmd	*handle_orcmd(char **start, char *end, t_m *m, t_cmd *left_cmd)
+{
+	t_cmd *cmd;
+>>>>>>> f6c2271deb67e8e0089cdd3efbaac3ed0c30397d
 	t_cmd	*right_cmd;
 	char	*s_token;
 	char	*e_token;
 
+<<<<<<< HEAD
 	cmd = parsepipe(start, end, m);
 	if (cmd == NULL)
 		return (NULL);
@@ -77,12 +84,62 @@ t_cmd	*parse_and_or(char **start, char *end, t_m *m)
 	}
 	else if (**start == '&' && *(*start + 1) != '&')
 	{
+=======
+	gettoken(start, end, &s_token, &e_token);
+	right_cmd = parse_and_or(start, end, m);
+	cmd = (t_cmd *)orcmd_init(left_cmd, right_cmd);
+	if (right_cmd == NULL)
+		return (NULL);
+	return (cmd);
+}
+
+t_cmd	*handle_andcmd(char **start, char *end, t_m *m, t_cmd *left_cmd)
+{
+	t_cmd *cmd;
+	t_cmd	*right_cmd;
+	char	*s_token;
+	char	*e_token;
+
+	gettoken(start, end, &s_token, &e_token);
+	right_cmd = parse_and_or(start, end, m);
+	cmd = (t_cmd *)andcmd_init(left_cmd, right_cmd);
+	if (right_cmd == NULL)
+		return (NULL);
+	return (cmd);
+}
+
+t_cmd	*parse_and_or(char **start, char *end, t_m *m)
+{
+	t_cmd	*cmd;
+
+	cmd = parsepipe(start, end, m);
+	if (cmd == NULL)
+		return (NULL);
+	if (**start == '&' && *(*start + 1) == '&' && *(*start + 2) != '\0')
+		return (handle_andcmd(start, end, m, cmd));
+	else if (**start == '|' && *(*start + 1) == '|' && *(*start + 2) != '\0')
+		return (handle_orcmd(start, end, m, cmd));
+	else if ((**start == '&' && *(*start + 1) == '&' && *(*start + 2) == '\0') \
+		|| (**start == '|' && *(*start + 1) == '|' && *(*start + 2) == '\0'))
+	{
+		printf("minishell: syntaxt error: unexpected end of file\n");
+		free_memory(cmd);
+		return (NULL);
+	}
+	else if (**start == '&' && *(*start + 1) != '&')
+	{
+		printf("minishell: syntax error: unexpected token &\n");
+>>>>>>> f6c2271deb67e8e0089cdd3efbaac3ed0c30397d
 		free_memory(cmd);
 		return (NULL);
 	}
 	return (cmd);
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f6c2271deb67e8e0089cdd3efbaac3ed0c30397d
 t_cmd	*parsepipe(char **start, char *end, t_m *m)
 {
 	t_cmd	*cmd;

@@ -481,6 +481,7 @@ env
 unset a b c
 ls | export a=hello | ls
 env
+<<<<<<< HEAD
 echo $HOME
 pwd
 echo $PWD
@@ -748,3 +749,34 @@ cd ..
 echo $OLDPWD
 cd -
 cd ..
+=======
+ls | cat <<EOF | ls
+ls || echo hello
+echo hello |
+echo hello ||
+echo hello || >
+ls && echo hello
+ls && >
+ls &&
+echo hello &
+ls && |
+echo hello &&
+echo hello ||
+echo hello |||
+echo hello &|
+echo hello |&
+echo hello &|
+echo hello &&
+echo hello &
+echo hello &
+echo hello &|
+echo hello |&
+echo hello &|
+echo hello &&|
+echo hello ||&
+echo hello ||&
+echo hello &&|
+echo hello &|
+echo hello |&
+(echo hello || ls ) | wc -l
+>>>>>>> f6c2271deb67e8e0089cdd3efbaac3ed0c30397d
