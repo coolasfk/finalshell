@@ -98,39 +98,3 @@ int	get_outtype(char **start)
 	}
 	return (type);
 }
-
-/*
-int	get_atype(char **start, char *end)
-{
-	int		type;
-	int		quote_num;
-	t_gl	*gl;
-
-	gl = get_gl();
-	quote_num = 0;
-	type = 'a';
-	//test
-	printf("in get_atype, start %c\n", **start);
-	//
-	while (*start < end && !ft_strchr(gl->spaces, **start)
-		&& !ft_strchr(gl->signs, **start) && **start != '"' && **start != 39)
-	{
-		if (**start == '"' || **start == 39)
-		{
-			//test
-			printf("for what case?\n");
-			//
-			quote_num++;
-		}
-		(*start)++;
-	}
-	if (quote_num == 1)
-	{
-		while (*start < end && (**start != '"' || **start != 39))
-			(*start)++;
-	}
-	//test
-	printf("after get_atype start %c before start %c\n", **start, *(*start - 1));
-	//
-	return (type);
-}*/

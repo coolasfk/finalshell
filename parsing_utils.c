@@ -17,10 +17,7 @@ int	get_type(char **start, char *end)
 	int	type;
 
 	if (**start == '(' || **start == ')')
-	{
-		type = **start;
-		(*start)++;
-	}
+		get_blocktype(start);
 	else if (**start == ';')
 		type = **start;
 	else if (**start == '|' && *(*start + 1) != '|')
